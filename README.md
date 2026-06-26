@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projeto de Automação
 
 ## Tecnologias
@@ -31,3 +32,7 @@ npx cypress run
 - Adicionar produto ao carrinho
 - Validar carrinho
 - API Trello
+=======
+# projeto-automacao-web-api
+Projeto de automação Web e API com Cypress, Cucumber e JavaScript
+>>>>>>> a2ddcf6b3f3bd1e85128013b898f4e6311fe1ad5
