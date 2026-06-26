@@ -1,0 +1,26 @@
+{
+  "name": "projeto-automacao-web-api",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.18.0",
+    "esbuild": "^0.28.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/step_definitions/**/*.{js,mjs,ts,tsx}"
+    ]
+  },
+  "keywords": [],
+  "author": "Ezequias Santana de Melo",
+  "license": "ISC",
+  "description": "Projeto de automação Web e API com Cypress, Cucumber e JavaScript"
+}
+
