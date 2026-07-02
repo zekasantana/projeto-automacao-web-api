@@ -9,7 +9,7 @@ Given("que existe um produto adicionado ao carrinho", () => {
 });
 
 When("acesso a tela do carrinho", () => {
-  CartPage.acessarCarrinho();
+  ProdutosPage.clicarVerCarrinhoNoModal();
 });
 
 Then("devo visualizar o produto adicionado", () => {

@@ -1,4 +1,5 @@
 class ProdutosPage {
+
   buscarProduto(produto) {
     cy.visit("/products");
     cy.get("#search_product").type(produto);
@@ -11,6 +12,11 @@ class ProdutosPage {
 
   validarProdutoAdicionado() {
     cy.contains("Added!").should("be.visible");
+  }
+
+  clicarVerCarrinhoNoModal() {
+    cy.get("#cartModal").should("be.visible");
+    cy.contains("View Cart").click();
   }
 }
 
