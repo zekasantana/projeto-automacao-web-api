@@ -1,10 +1,10 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import ProdutosPage from "../../pages/ProdutosPage";
 
-When("pesquiso por um produto", () => {
-  ProdutosPage.buscarProduto("Blue Top");
+When("pesquiso pelo produto {string}", (produto) => {
+  ProdutosPage.buscarProduto(produto);
 });
 
-Then("o produto deve ser exibido", () => {
-  cy.contains("Blue Top").should("be.visible");
+Then("devo visualizar o produto {string}", (produto) => {
+  cy.contains(produto).should("be.visible");
 });

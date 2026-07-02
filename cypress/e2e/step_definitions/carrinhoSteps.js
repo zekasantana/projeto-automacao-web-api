@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import ProdutosPage from "../../pages/produtosPage";
-import CartPage from "../../pages/cartPage";
+import ProdutosPage from "../../pages/ProdutosPage";
+import CartPage from "../../pages/CartPage";
 
 Given("que existe um produto adicionado ao carrinho", () => {
   cy.login();
