@@ -1,4 +1,10 @@
-🚀 Projeto de Automação Web e API
+# 🚀 Projeto de Automação Web e API
+
+![Cypress](https://img.shields.io/badge/Cypress-15-green)
+![Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Passing-success)
+![Allure](https://img.shields.io/badge/Report-Allure-orange)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
 📋 Sobre o projeto
 
