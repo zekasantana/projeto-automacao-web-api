@@ -96,7 +96,7 @@ Antes de executar o projeto é necessário possuir instalado:
 
 Clone o repositório:
 
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/zekasantana/projeto-automacao-web-api.git
 
 Acesse a pasta do projeto:
 
