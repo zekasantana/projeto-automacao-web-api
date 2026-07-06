@@ -148,15 +148,19 @@ A cada alteração enviada para o repositório, a pipeline executa automaticamen
 
 🚀 Roadmap
 
-Próximas evoluções planejadas:
+## Executando com Docker
 
-* Docker para execução dos testes.
-* Contract Testing utilizando JSON Schema (AJV).
-* Integração entre testes Web e API.
-* Login via API utilizando cy.session().
-* Testes Data Driven.
-* Melhorias na documentação.
-* Novas Releases do projeto.
+Construir a imagem
+
+docker compose build
+
+Executar os testes
+
+docker compose up
+
+Ou reconstruindo tudo
+
+docker compose up --build
 
 ⸻
 
