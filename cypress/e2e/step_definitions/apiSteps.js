@@ -1,8 +1,11 @@
-import {
-Given,
-When,
-Then
-} from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
+import Ajv from "ajv";
+import addFormats from "ajv-formats";
+import trelloSchema from "../../schemas/trelloSchema.js";
+
+const ajv = new Ajv();
+addFormats(ajv);
+const validate = ajv.compile(trelloSchema);
 
 let response;
 
@@ -16,12 +19,14 @@ cy.request({
 method:"GET",
 url:"https://api.trello.com/1/actions/592f11060f95a3d3d46a987a"
 
-}).then((res)=>{
+}).then((res) => {
+  response = res;
 
-response = res
+  const valid = validate(res.body);
 
-cy.log("Nome da Lista: " + res.body.data.list.name)
+  expect(valid, JSON.stringify(validate.errors)).to.be.true;
 
+  cy.log("Nome da Lista: " + res.body.data.list.name);
 })
 
 })
