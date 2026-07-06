@@ -159,11 +159,24 @@ O desenvolvimento deste framework foi organizado em versões evolutivas:
 
 ⸻
 
+## Contract Testing
+
+O projeto utiliza Contract Testing para validar a estrutura das respostas da API, garantindo que alterações inesperadas sejam identificadas durante a execução dos testes.
+
+### Tecnologias
+
+- AJV
+- JSON Schema
+
+### Benefícios
+
+- Validação automática da estrutura da resposta
+- Maior confiabilidade dos testes de API
+- Detecção antecipada de mudanças de contrato
+- Reutilização de schemas
+
 Próximas Evoluções
 
-* Contract Testing com AJV e JSON Schema
-* Testes Data Driven
-* Mocks utilizando cy.intercept()
 * Execução paralela
 * Dashboard de execução
 * Testes de Performance
