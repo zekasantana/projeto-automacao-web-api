@@ -6,19 +6,17 @@
 ![Allure](https://img.shields.io/badge/Report-Allure-orange)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
-📋 Sobre o projeto
 
-Este projeto foi desenvolvido com o objetivo de demonstrar boas práticas na automação de testes Web e API utilizando JavaScript, Cypress e Cucumber (BDD).
+Framework de automação de testes desenvolvido com foco em boas práticas de mercado, utilizando Cypress, Cucumber (BDD), Page Object Model, testes de API, GitHub Actions, Allure Report e Docker.
 
-A arquitetura foi construída seguindo padrões utilizados em projetos corporativos, proporcionando maior organização, reutilização de código e facilidade de manutenção.
-
-Além da automação funcional, o projeto conta com integração contínua (CI/CD) utilizando GitHub Actions e geração de relatórios de execução através do Allure Report.
+O objetivo deste projeto é demonstrar conhecimentos em automação de testes Web e API, integração contínua (CI/CD), organização de código e arquitetura de testes utilizada em projetos corporativos.
 
 ⸻
 
-🛠 Tecnologias Utilizadas
+Tecnologias
 
 * JavaScript
+* Node.js
 * Cypress
 * Cucumber (BDD)
 * Page Object Model (POM)
@@ -26,146 +24,159 @@ Além da automação funcional, o projeto conta com integração contínua (CI/C
 * GitHub
 * GitHub Actions (CI/CD)
 * Allure Report
-* Node.js
-* npm
+* Docker
+* Docker Compose
 
 ⸻
 
-📂 Arquitetura do Projeto
+Estrutura do Projeto
 
-O projeto foi organizado utilizando o padrão Page Object Model (POM), separando responsabilidades entre páginas, cenários, definições de passos e arquivos de configuração.
-
-Principais diretórios:
-
-* cypress/e2e → Arquivos .feature escritos em Gherkin.
-* cypress/e2e/step_definitions → Implementação dos passos dos cenários.
-* cypress/pages → Classes Page Object responsáveis pelas ações nas páginas.
-* cypress/fixtures → Massa de dados utilizada nos testes.
-* cypress/support → Comandos customizados e configurações globais.
-* .github/workflows → Pipeline de Integração Contínua.
-* allure-results → Resultados utilizados para geração do relatório Allure.
+projeto-automacao-web-api
+│
+├── cypress
+│   ├── e2e
+│   ├── fixtures
+│   ├── pages
+│   ├── reports
+│   └── support
+│
+├── .github
+│   └── workflows
+│
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+├── cypress.config.js
+├── package.json
+└── README.md
 
 ⸻
 
-✅ Cenários Automatizados
+Funcionalidades Automatizadas
 
 Testes Web
 
-* Login de usuário.
-* Pesquisa de produtos.
-* Adição de produtos ao carrinho.
-* Validação do carrinho.
-* Fluxo de checkout.
+* Login
+* Pesquisa de produtos
+* Carrinho de compras
+* Checkout
 
 Testes de API
 
-* Validação de requisição GET na API do Trello.
-* Validação do código de resposta HTTP.
-* Validação do conteúdo retornado pela API.
+* Validação de endpoint
+* Validação de Status Code
+* Validação do Body
+* Validação de Headers
+* Validação do Tempo de Resposta
 
 ⸻
 
-⚙️ Boas Práticas Aplicadas
+Arquitetura
 
-Durante o desenvolvimento do projeto foram aplicadas diversas práticas utilizadas em ambientes corporativos:
+O projeto segue o padrão Page Object Model (POM) para aumentar a reutilização de código e facilitar a manutenção dos testes.
 
-* Arquitetura Page Object Model (POM).
-* Escrita de cenários utilizando BDD/Gherkin.
-* Reutilização de código.
-* Separação das responsabilidades.
-* Organização por Features.
-* Utilização de Step Definitions.
-* Estrutura preparada para expansão do framework.
-* Versionamento utilizando Git.
-* Integração Contínua com GitHub Actions.
-* Geração de relatórios Allure.
+Também utiliza BDD (Behavior Driven Development) através do Cucumber para tornar os cenários mais legíveis e próximos da linguagem de negócio.
 
 ⸻
 
-💻 Pré-requisitos
+Relatórios
 
-Antes de executar o projeto é necessário possuir instalado:
+O projeto utiliza Allure Report para geração de relatórios detalhados da execução dos testes.
 
-* Node.js
-* npm
-* Git
+Gerar relatório:
+
+npm run allure:generate
+
+Abrir relatório:
+
+npm run allure:open
 
 ⸻
 
-📦 Instalação
+Integração Contínua (CI/CD)
 
-Clone o repositório:
+O projeto possui pipeline automatizada utilizando GitHub Actions, permitindo que os testes sejam executados automaticamente a cada alteração enviada ao repositório.
+
+⸻
+
+Executando Localmente
+
+Clonar o projeto
 
 git clone https://github.com/zekasantana/projeto-automacao-web-api.git
 
-Acesse a pasta do projeto:
+Acessar a pasta
 
 cd projeto-automacao-web-api
 
-Instale as dependências:
+Instalar as dependências
 
 npm install
 
-⸻
-
-▶️ Executando os testes
-
-Executar todos os testes:
-
-npx cypress run
-
-Abrir o Cypress em modo gráfico:
+Abrir o Cypress
 
 npx cypress open
 
-Executar um cenário específico:
+Executar todos os testes
 
-npx cypress run --spec "cypress/e2e/login.feature"
+npm test
 
-⸻
+ou
 
-📊 Relatórios Allure
-
-Após executar os testes, gere o relatório utilizando os comandos abaixo:
-
-npx allure generate allure-results --clean
-
-Em seguida, abra o relatório:
-
-npx allure open
-
-O relatório apresenta informações detalhadas sobre a execução dos testes, incluindo cenários executados, tempo de execução, status e histórico das execuções.
+npx cypress run
 
 ⸻
 
-🔄 Integração Contínua (CI/CD)
+Executando com Docker
 
-O projeto possui uma pipeline configurada com GitHub Actions.
-
-A cada alteração enviada para o repositório, a pipeline executa automaticamente os testes, garantindo que novas mudanças não comprometam o funcionamento do framework.
-
-⸻
-
-🚀 Roadmap
-
-## Executando com Docker
-
-Construir a imagem
+Construir a imagem:
 
 docker compose build
 
-Executar os testes
+Executar os testes:
 
 docker compose up
 
-Ou reconstruindo tudo
+Reconstruir a imagem e executar novamente:
 
 docker compose up --build
 
+Encerrar os containers:
+
+docker compose down
+
 ⸻
 
-👨‍💻 Autor
+Releases
+
+O desenvolvimento deste framework foi organizado em versões evolutivas:
+
+* v1.0.0 – Estrutura inicial do framework
+* v1.1.0 – Integração contínua com GitHub Actions
+* v1.2.0 – Integração com Allure Report
+* v1.3.0 – Suporte à execução com Docker
+* v1.4.0 – Contract Testing (em desenvolvimento)
+
+⸻
+
+Próximas Evoluções
+
+* Contract Testing com AJV e JSON Schema
+* Testes Data Driven
+* Mocks utilizando cy.intercept()
+* Execução paralela
+* Dashboard de execução
+* Testes de Performance
+* Integração entre testes Web e API
+
+⸻
+
+Autor
 
 Ezequias Santana de Melo
+
+QA Automation Engineer
+
+GitHub: https://github.com/zekasantana
 
 Projeto desenvolvido como parte da evolução do portfólio profissional em QA Automation, aplicando práticas utilizadas em projetos reais para demonstrar conhecimentos em automação de testes, arquitetura de frameworks e integração contínua.
