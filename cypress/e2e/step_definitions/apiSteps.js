@@ -42,3 +42,19 @@ Then("devo exibir o nome da lista",()=>{
 expect(response.body.data.list.name).to.not.be.empty
 
 })
+
+Given("que possuo uma URL inválida da API", () => {
+  cy.wrap("https://api.trello.com/1/rota-inexistente").as("urlApi");
+});
+
+When("realizo uma requisição GET para uma rota inexistente", function () {
+  cy.request({
+    method: "GET",
+    url: this.urlApi,
+    failOnStatusCode: false
+  }).as("response"); 
+})
+
+Then("o status code deve ser 404", function () {
+    expect(this.response.status).to.equal(404);
+})
