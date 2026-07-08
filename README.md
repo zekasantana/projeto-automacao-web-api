@@ -7,189 +7,186 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
 
-Framework de automação de testes desenvolvido com foco em boas práticas de mercado, utilizando Cypress, Cucumber (BDD), Page Object Model, testes de API, GitHub Actions, Allure Report e Docker.
+Projeto de automação de testes desenvolvido com foco em boas práticas de QA Automation, utilizando **Cypress**, **Cucumber (BDD)**, **Page Object Model (POM)**, **Contract Testing (AJV)**, **Docker**, **GitHub Actions (CI/CD)** e **Allure Report**.
 
-O objetivo deste projeto é demonstrar conhecimentos em automação de testes Web e API, integração contínua (CI/CD), organização de código e arquitetura de testes utilizada em projetos corporativos.
+O objetivo deste projeto é demonstrar uma arquitetura escalável e profissional para automação de testes Web e API, seguindo padrões utilizados no mercado.
 
-⸻
+---
 
-Tecnologias
+# 📌 Tecnologias Utilizadas
 
-* JavaScript
-* Node.js
-* Cypress
-* Cucumber (BDD)
-* Page Object Model (POM)
-* Git
-* GitHub
-* GitHub Actions (CI/CD)
-* Allure Report
-* Docker
-* Docker Compose
+- JavaScript
+- Cypress
+- Cucumber (BDD)
+- Page Object Model (POM)
+- AJV (JSON Schema Validation)
+- Docker
+- GitHub Actions (CI/CD)
+- Allure Report
+- Git
+- GitHub
 
-⸻
+---
 
-Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
-projeto-automacao-web-api
-│
-├── cypress
-│   ├── e2e
-│   ├── fixtures
-│   ├── pages
-│   ├── reports
-│   └── support
-│
-├── .github
-│   └── workflows
-│
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-├── cypress.config.js
-├── package.json
-└── README.md
+```text
+cypress/
+├── e2e/
+│   ├── api.feature
+│   ├── busca.feature
+│   ├── carrinho.feature
+│   ├── checkout.feature
+│   ├── login.feature
+│   ├── produtos.feature
+│   └── step_definitions/
+├── fixtures/
+├── pages/
+├── schemas/
+└── support/
+```
 
-⸻
+---
 
-Funcionalidades Automatizadas
+# ✅ Cenários Automatizados
 
-Testes Web
+## 🌐 Testes Web
 
-* Login
-* Pesquisa de produtos
-* Carrinho de compras
-* Checkout
+### Login
+- ✅ Login com credenciais válidas
+- ✅ Login com credenciais inválidas
+- ✅ Validação dos campos obrigatórios
 
-Testes de API
+### Produtos
+- ✅ Busca de produto existente
+- ✅ Busca de produto inexistente
 
-* Validação de endpoint
-* Validação de Status Code
-* Validação do Body
-* Validação de Headers
-* Validação do Tempo de Resposta
+### Carrinho
+- ✅ Adicionar produto ao carrinho
+- ✅ Validação do produto no carrinho
 
-⸻
+### Checkout
+- ✅ Acessar página de checkout
 
-Arquitetura
+---
 
-O projeto segue o padrão Page Object Model (POM) para aumentar a reutilização de código e facilitar a manutenção dos testes.
+## 🔗 Testes de API
 
-Também utiliza BDD (Behavior Driven Development) através do Cucumber para tornar os cenários mais legíveis e próximos da linguagem de negócio.
+### API Trello
 
-⸻
+- ✅ Status Code 200
+- ✅ Status Code 404
+- ✅ Validação do contrato (JSON Schema)
+- ✅ Validação do conteúdo da resposta
 
-Relatórios
+---
 
-O projeto utiliza Allure Report para geração de relatórios detalhados da execução dos testes.
+# ▶️ Como Executar o Projeto
+
+## Instalar dependências
+
+```bash
+npm install
+```
+
+## Executar todos os testes
+
+```bash
+npx cypress run
+```
+
+## Abrir o Cypress
+
+```bash
+npx cypress open
+```
+
+---
+
+# 📊 Relatório Allure
 
 Gerar relatório:
 
-npm run allure:generate
+```bash
+npm run report
+```
 
 Abrir relatório:
 
+```bash
 npm run allure:open
+```
 
-⸻
+---
 
-Integração Contínua (CI/CD)
+# 🐳 Execução com Docker
 
-O projeto possui pipeline automatizada utilizando GitHub Actions, permitindo que os testes sejam executados automaticamente a cada alteração enviada ao repositório.
-
-⸻
-
-Executando Localmente
-
-Clonar o projeto
-
-git clone https://github.com/zekasantana/projeto-automacao-web-api.git
-
-Acessar a pasta
-
-cd projeto-automacao-web-api
-
-Instalar as dependências
-
-npm install
-
-Abrir o Cypress
-
-npx cypress open
-
-Executar todos os testes
-
-npm test
-
-ou
-
-npx cypress run
-
-⸻
-
-Executando com Docker
-
-Construir a imagem:
-
-docker compose build
-
-Executar os testes:
-
-docker compose up
-
-Reconstruir a imagem e executar novamente:
-
+```bash
 docker compose up --build
+```
 
-Encerrar os containers:
+---
 
-docker compose down
+# ⚙️ Integração Contínua
 
-⸻
+O projeto possui pipeline automatizada utilizando **GitHub Actions**, responsável por:
 
-Releases
+- Instalar dependências
+- Executar os testes automatizados
+- Validar a suíte de testes
+- Garantir a qualidade antes de novos commits
 
-O desenvolvimento deste framework foi organizado em versões evolutivas:
+---
 
-* v1.0.0 – Estrutura inicial do framework
-* v1.1.0 – Integração contínua com GitHub Actions
-* v1.2.0 – Integração com Allure Report
-* v1.3.0 – Suporte à execução com Docker
-* v1.4.0 – Contract Testing (em desenvolvimento)
+# ✔ Funcionalidades Implementadas
 
-⸻
+- ✔ Automação Web
+- ✔ Automação de API
+- ✔ BDD com Cucumber
+- ✔ Page Object Model
+- ✔ Contract Testing (AJV)
+- ✔ Docker
+- ✔ GitHub Actions
+- ✔ Allure Report
+- ✔ Cenários Positivos
+- ✔ Cenários Negativos
 
-## Contract Testing
+---
 
-O projeto utiliza Contract Testing para validar a estrutura das respostas da API, garantindo que alterações inesperadas sejam identificadas durante a execução dos testes.
+# 📈 Roadmap
 
-### Tecnologias
+## ✅ Releases concluídas
 
-- AJV
-- JSON Schema
+- ✔ v1.0.0 – Estrutura do Framework
+- ✔ v1.1.0 – GitHub Actions (CI/CD)
+- ✔ v1.2.0 – Allure Report
+- ✔ v1.3.0 – Docker
+- ✔ v1.4.0 – Contract Testing
+- ✔ v1.5.0 – Cenários Negativos
 
-### Benefícios
+## 🚀 Próximas evoluções
 
-- Validação automática da estrutura da resposta
-- Maior confiabilidade dos testes de API
-- Detecção antecipada de mudanças de contrato
-- Reutilização de schemas
+- Login via API
+- cy.session()
+- cy.intercept() e Mocking
+- Execução Paralela
+- Testes Cross Browser
+- Performance Testing
+- Accessibility Testing
+- Histórico de Relatórios Allure
 
-Próximas Evoluções
+---
 
-* Execução paralela
-* Dashboard de execução
-* Testes de Performance
-* Integração entre testes Web e API
+# 👨‍💻 Autor
 
-⸻
-
-Autor
-
-Ezequias Santana de Melo
+**Ezequias Santana de Melo**
 
 QA Automation Engineer
 
-GitHub: https://github.com/zekasantana
+GitHub:
+https://github.com/zekasantana
+
+LinkedIn:
+*(https://www.linkedin.com/in/ezequias-santana-de-melo-231a32145/)*
 
 Projeto desenvolvido como parte da evolução do portfólio profissional em QA Automation, aplicando práticas utilizadas em projetos reais para demonstrar conhecimentos em automação de testes, arquitetura de frameworks e integração contínua.
