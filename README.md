@@ -15,35 +15,40 @@ O objetivo deste projeto é demonstrar uma arquitetura escalável e profissional
 
 # 📌 Tecnologias Utilizadas
 
-- JavaScript
 - Cypress
 - Cucumber (BDD)
+- JavaScript
 - Page Object Model (POM)
-- AJV (JSON Schema Validation)
+- GitHub Actions
 - Docker
-- GitHub Actions (CI/CD)
 - Allure Report
-- Git
-- GitHub
+- AJV / JSON Schema
+- Automation Exercise API
+- Trello API
 
 ---
 
 # 📂 Estrutura do Projeto
 
 ```text
-cypress/
-├── e2e/
+cypress
+├── e2e
 │   ├── api.feature
+│   ├── login.feature
+│   ├── loginApi.feature
 │   ├── busca.feature
+│   ├── produtos.feature
 │   ├── carrinho.feature
 │   ├── checkout.feature
-│   ├── login.feature
-│   ├── produtos.feature
-│   └── step_definitions/
-├── fixtures/
-├── pages/
-├── schemas/
-└── support/
+│   └── step_definitions
+│       ├── apiSteps.js
+│       ├── loginSteps.js
+│       ├── loginApiSteps.js
+│       ├── buscaSteps.js
+│       ├── produtosSteps.js
+│       ├── carrinhoSteps.js
+│       ├── checkoutSteps.js
+│       └── commonSteps.js
 ```
 
 ---
@@ -72,12 +77,10 @@ cypress/
 
 ## 🔗 Testes de API
 
-### API Trello
-
-- ✅ Status Code 200
-- ✅ Status Code 404
-- ✅ Validação do contrato (JSON Schema)
-- ✅ Validação do conteúdo da resposta
+- ✅ Validação de Login pela API (Automation Exercise)
+- ✅ Validação da API Trello
+- ✅ Validação de resposta 404
+- ✅ Contract Testing com AJV / JSON Schema
 
 ---
 
@@ -163,6 +166,19 @@ O projeto possui pipeline automatizada utilizando **GitHub Actions**, responsáv
 - ✔ v1.3.0 – Docker
 - ✔ v1.4.0 – Contract Testing
 - ✔ v1.5.0 – Cenários Negativos
+- ✔ v1.6.0 – Cenários Login via API
+
+## Novidades da Sprint 6
+
+### Login via API
+
+Foi implementado um cenário de autenticação utilizando a API do Automation Exercise.
+
+Principais benefícios:
+
+- Validação das credenciais diretamente pela API.
+- Separação entre testes Web e API.
+- Estrutura preparada para reutilização da autenticação em futuras otimizações com `cy.session()`.
 
 ## 🚀 Próximas evoluções
 
